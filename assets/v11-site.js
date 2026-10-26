@@ -285,7 +285,7 @@
   }
   function gameHead(id, extra) {
     var g = G[id], badges = (g.c.indexOf("new") >= 0 ? '<span class="gd-badge new">New</span>' : "") + (g.c.indexOf("hot") >= 0 ? '<span class="gd-badge hot">Hot</span>' : "") + ((META[id] || [""])[0] === "Live casino" ? '<span class="gd-badge live">Live</span>' : "");
-    return '<div class="gd-head"><nav class="crumbs gd-crumbs" aria-label="You are here"><ol><li><a href="#/games">All games</a></li><li><a href="#/providers/' + P.pslug(g.p) + '">' + esc(g.p) + "</a></li>" + (extra ? '<li><a href="#/game/' + id + '">' + esc(g.n) + "</a></li>" : "") + '</ol></nav><h1 id="pgTitle" tabindex="-1">' + (extra ? "<small>" + extra + "</small>" : "") + esc(g.n) + (badges ? ' <span class="gd-badges">' + badges + "</span>" : "") + "</h1></div>";
+    return '<div class="gd-head"><a class="gd-back" href="#/" data-back>&larr; Back</a><nav class="crumbs gd-crumbs" aria-label="You are here"><ol><li><a href="#/games">All games</a></li><li><a href="#/providers/' + P.pslug(g.p) + '">' + esc(g.p) + "</a></li>" + (extra ? '<li><a href="#/game/' + id + '">' + esc(g.n) + "</a></li>" : "") + '</ol></nav><h1 id="pgTitle" tabindex="-1">' + (extra ? "<small>" + extra + "</small>" : "") + esc(g.n) + (badges ? ' <span class="gd-badges">' + badges + "</span>" : "") + "</h1></div>";
   }
   function gameFrame(g, inner) {
     return `<div class="gd-frame"><div class="gd-bg" style="background-image:url('` + g.t + `')" aria-hidden="true"></div><span class="curtain l" aria-hidden="true"></span><span class="curtain r" aria-hidden="true"></span><div class="gd-launch"><span class="tc-bulbs bulbs" aria-hidden="true"></span>` + inner + "</div></div>";
@@ -310,21 +310,22 @@
     var g = G[id], ok = hasDemo(id);
     return gameHead(id, ok ? "Demo &middot; play money" : "No demo") + '<section class="demo" aria-labelledby="pgTitle">' + gameFrame(
       g,
-      '<img class="gd-thumb" src="' + g.t + '" alt="" width="104" height="104"><h2>' + (ok ? "The demo loads here" : "No demo for this game") + '</h2><p class="gd-prov">' + (ok ? "On the live site " + esc(g.p) + "&rsquo;s demo of " + esc(g.n) + " plays in this frame with play money. This preview loads no game and calls no studio." : esc(g.p) + " does not offer a demo of " + esc(g.n) + " here. Log in to play for real, or open a game that shows Try the demo.") + '</p><div class="gp-ctas"><a class="pill pill-gold" href="#/game/' + id + '/play">Play for real money</a><a class="pill pill-ghost" href="#/game/' + id + '">&larr; Back to game</a></div>'
+      '<img class="gd-thumb" src="' + g.t + '" alt="" width="104" height="104"><h2>' + (ok ? "The demo loads here" : "No demo for this game") + '</h2><p class="gd-prov">' + (ok ? "On the live site " + esc(g.p) + "&rsquo;s demo of " + esc(g.n) + " plays in this frame with play money. This preview loads no game and calls no studio." : esc(g.p) + " does not offer a demo of " + esc(g.n) + " here. Log in to play for real, or open a game that shows Try the demo.") + '</p><div class="gp-ctas"><a class="pill pill-gold" href="#/game/' + id + '/play">Play for real money</a><a class="pill pill-ghost" href="#/game/' + id + '" data-back="#/game/' + id + '">&larr; Back to game</a></div>'
     ) + (ok ? '<p class="demo-foot">Demo play uses play money only and has no cash value. 18+. <a href="#/responsible">Play responsibly</a>.</p>' : "") + "</section>";
   }
+  var PROMO_ART = { welcome: "promo-welcome", premiere: "promo-premiere", encore: "promo-encore", club: "promo-club" };
   function promoCard(k, open) {
     var o = OFFERS[k];
-    return '<article class="promo' + (open ? " open" : "") + '" id="offer-' + k + '" style="--oc:' + o.color + ";--obg:" + o.bg + '"><div class="promo-art" aria-hidden="true"><span class="pa-bulbs bulbs"></span>' + icon(o.icon) + "<b>" + o.value + '</b></div><div class="promo-body"><span class="okind">' + o.kind + '</span><h2 id="ot-' + k + '" tabindex="-1">' + o.title + '</h2><p class="oterms">' + o.line + '</p><div class="promo-ctas"><a class="pill pill-gold" href="' + o.cta[1] + '">' + o.cta[0] + '</a><a class="promo-more-btn" href="#/promotions' + (open ? "" : "/" + k) + '" aria-expanded="' + open + '" aria-controls="more-' + k + '">' + (open ? "Hide details" : "More details") + "</a></div></div>" + (open ? '<div class="promo-more" id="more-' + k + '"><dl class="okeys">' + o.keys.map(function(r) {
+    return '<article class="promo' + (open ? " open" : "") + '" id="offer-' + k + '" style="--oc:' + o.color + ";--obg:" + o.bg + '"><div class="promo-art" aria-hidden="true"><img class="pc-art" src="assets/art/' + PROMO_ART[k] + '.webp" alt="" width="520" height="693"' + (open ? "" : ' loading="lazy"') + '><span class="pa-shine"></span><span class="pa-bulbs bulbs"></span></div><div class="promo-body"><div class="ohead"><span class="okind">' + o.kind + '</span><span class="b-sample" title="Sample offer for this preview: the casino sets the real figures and terms.">Sample</span></div><h2 id="ot-' + k + '" tabindex="-1">' + o.title + '</h2><p class="oval">' + o.value + '</p><p class="oterms">' + o.line + '</p><div class="promo-ctas"><a class="pill pill-ghost promo-see" href="#/promotions' + (open ? "" : "/" + k) + '" aria-expanded="' + open + '" aria-controls="more-' + k + '">' + (open ? "Hide the offer" : "See the offer") + '<span class="sr"> (' + o.title + ")</span></a></div></div>" + (open ? '<div class="promo-more" id="more-' + k + '"><div class="promo-go"><a class="pill pill-gold" href="' + o.cta[1] + '">' + o.cta[0] + '</a></div><dl class="okeys">' + o.keys.map(function(r) {
       return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>";
     }).join("") + "</dl>" + (o.soon ? "" : '<p class="o-choice">Or <a href="#/join">join with no bonus</a>: no wagering at all.</p>') + '<section class="offer-rules" aria-labelledby="rules-' + k + '"><h3 id="rules-' + k + '">' + (o.soon ? "What we know so far" : "Full rules") + "</h3><ol>" + o.rules.map(function(r) {
       return "<li>" + r + "</li>";
     }).join("") + '</ol><p class="rules-note">General bonus terms in the <a href="#/terms/bonuses">Terms &amp; conditions</a> also apply. ' + OP("the final figures and the licence-specific wording.") + '</p><p class="safe-line">Play for the show, not the money. Set a deposit limit before you claim. <a href="#/responsible">Responsible play</a></p></section></div>' : "") + "</article>";
   }
   function promosPage(k) {
-    return docHead("Popcorn presents", "Promotions", "Join or log in to see which offers you can claim. Every bonus is a choice. Figures are in euro; pound accounts get the same figures in &pound;.") + '<div class="promo-grid">' + OFFER_ORDER.map(function(x) {
+    return '<header class="st-head pr-head"><img class="st-host" src="assets/showman/point-right.webp" alt="" width="551" height="720"><div class="st-sign"><span class="bill-bulbs" aria-hidden="true"></span><h1 id="pgTitle" tabindex="-1"><small>Popcorn presents</small>Promotions</h1><span class="st-sub">Tonight&rsquo;s line-up &middot; every bonus is a choice</span></div><a class="more st-back lobby-back" href="#/">&larr; Back to lobby</a></header><div class="promo-grid">' + OFFER_ORDER.map(function(x) {
       return promoCard(x, x === k);
-    }).join("") + '</div><p class="offers-foot">Prefer to play without a bonus? You can, every time. <a href="#/responsible/limits">Set your limits</a> &middot; <a href="#/help/bonuses">How bonuses work</a></p>';
+    }).join("") + '</div><p class="offers-foot"><span class="b-sample">Sample</span> Offers, figures and terms on this page are samples for this preview, in euro (pound accounts get the same figures in &pound;). Prefer to play without a bonus? You can, every time. <a href="#/responsible/limits">Set your limits</a> &middot; <a href="#/help/bonuses">How bonuses work</a></p>';
   }
   var POPULAR = [["payments", 1], ["payments", 3], ["account", 1], ["bonuses", 1], ["payments", 0], ["games", 2]];
   function helpQA(sec, i) {
@@ -1211,7 +1212,7 @@
     document.body.classList.remove("v-prov", "v-studios");
     document.body.classList.add("v-page");
     page.className = "page " + cls;
-    page.innerHTML = html;
+    page.innerHTML = (/(^| )pg-(help|contact|about|resp|legal)( |$)/.test(cls) ? '<div class="lobby-bar"><a class="more lobby-back" href="#/">&larr; Back to lobby</a></div>' : "") + html;
     page.hidden = false;
     P.setChip(null);
     document.body.classList.toggle("v-auth", / pg-box/.test(" " + cls));
@@ -1251,7 +1252,7 @@
           P.q.value = sQuery;
           P.runSearch();
         }
-        P.openSearch();
+        P.openSearch(!!opt.restore);
         y = 0;
         break;
       case "providers":
@@ -1342,6 +1343,12 @@
     document.title = t ? t + " | Popcorn Casino preview" : BASE_TITLE;
     if (opt.restore) {
       window.scrollTo({ top: opt.restore.y, behavior: "auto" });
+      var rs = opt.restore.rails;
+      if (rs)
+        rails().forEach(function(t, i) {
+          if (rs[i] != null && t.scrollLeft !== rs[i])
+            t.scrollTo({ left: rs[i], behavior: "auto" });
+        });
       var o = opt.restore.opener, back = o && o.isConnected && o.offsetParent !== null ? o : findLike(opt.restore);
       if (back) {
         back.focus({ preventScroll: true });
@@ -1367,21 +1374,33 @@
     var href = o && o.getAttribute && o.getAttribute("href"), reg = href && o.parentElement && o.parentElement.closest("[id]");
     return reg ? { region: reg.id, nth: [].indexOf.call(reg.querySelectorAll('a[href="' + href + '"]'), o) } : {};
   }
-  var seq = 0, key = 0, mem = {};
+  var seq = 0, key = 0, mem = {}, hashAt = {}, prevOf = {};
+  function rails() {
+    return [].filter.call(document.querySelectorAll(".track"), function(t) {
+      return t.offsetParent !== null;
+    });
+  }
   history.scrollRestoration = "manual";
   function remember(opener) {
     var o = opener || document.activeElement;
     var at = place(o);
-    mem[key] = { y: window.scrollY, opener: o && o !== document.body ? o : null, href: o && o.getAttribute && o.getAttribute("href"), region: at.region, nth: at.nth };
+    mem[key] = { y: window.scrollY, opener: o && o !== document.body ? o : null, href: o && o.getAttribute && o.getAttribute("href"), region: at.region, nth: at.nth, rails: rails().map(function(t) {
+      return t.scrollLeft;
+    }) };
   }
   function norm(h) {
     return h === "#" || h === "" ? "#/" : h;
   }
   function go(href, opener) {
     href = norm(href);
-    if (opener && opener.hasAttribute && opener.hasAttribute("data-back") && key > 0) {
-      history.back();
-      return;
+    // data-back: return to the entry before this one (same page, rail, scroll and control) instead of stacking a new one.
+    // An empty data-back returns to whatever came before; data-back="<address>" only when that address came before.
+    if (opener && opener.hasAttribute && opener.hasAttribute("data-back") && key > 0 && prevOf[key] !== void 0) {
+      var want = opener.getAttribute("data-back");
+      if (!want || norm(hashAt[prevOf[key]] || "") === norm(want)) {
+        history.back();
+        return;
+      }
     }
     var r = parse(href);
     if (r.canon)
@@ -1392,11 +1411,15 @@
     }
     if (opener && opener.closest && opener.closest(".auth-tabs") && route && /^(join|login|reset|play)$/.test(route.v)) {
       history.replaceState({ k: key }, "", href);
+      hashAt[key] = href;
       render(r, {});
       return;
     }
     remember(opener);
+    var from = key;
     history.pushState({ k: key = ++seq }, "", href);
+    prevOf[key] = from;
+    hashAt[key] = href;
     render(r, {});
   }
   window.addEventListener("popstate", function(e) {
@@ -1404,12 +1427,16 @@
     var k = e.state && e.state.k;
     if (k == null) {
       k = ++seq;
+      prevOf[k] = key;
       history.replaceState({ k }, "", location.hash || "#/");
     }
+    hashAt[k] = norm(location.hash);
     key = k;
     var r = parse(location.hash);
-    if (r.canon)
+    if (r.canon) {
       history.replaceState({ k }, "", r.canon);
+      hashAt[k] = r.canon;
+    }
     render(r, { restore: mem[k] });
   });
   window.__site = { hasDemo, reserved: RESERVED, sample: S };
@@ -1423,7 +1450,10 @@
     searching: function(on) {
       if (on && route && route.v !== "search") {
         remember(P.q);
+        var from = key;
         history.pushState({ k: key = ++seq }, "", "#/search");
+        prevOf[key] = from;
+        hashAt[key] = "#/search";
         route = { v: "search" };
         P.hidePage();
         P.hideStudios();
@@ -1433,6 +1463,7 @@
       if (!on && route && route.v === "search") {
         sQuery = "";
         history.replaceState({ k: key }, "", "#/");
+        hashAt[key] = "#/";
         route = { v: "lobby" };
         title(null);
       }
@@ -1444,6 +1475,7 @@
   (function() {
     var r = parse(location.hash);
     history.replaceState({ k: 0 }, "", r.canon || (location.hash ? location.hash : location.pathname + location.search));
+    hashAt[0] = norm(location.hash);
     render(r, { initial: true });
   })();
 })();

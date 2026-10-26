@@ -101,8 +101,11 @@
   function pslug(n) {
     return String(n).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   }
+  function tileLogo(src) {
+    return src ? src.replace(/assets\/providers\/(?:pill\/)?([^\/.]+)\.\w+$/, "assets/providers/tile/$1.webp") : src;
+  }
   function pcard(p, dup) {
-    var pl = PVBY[p.n] && PVBY[p.n].logo || p.logo;
+    var pl = tileLogo(PVBY[p.n] && PVBY[p.n].logo || p.logo);
     return '<a class="pcard' + (dup ? " dup" : "") + '" href="#/providers/' + pslug(p.n) + '" data-prov="' + esc(p.n) + '"' + (dup ? ' tabindex="-1" aria-hidden="true"' : ' aria-label="' + esc(p.n) + ' games"') + '><span class="ppill"><img src="' + pl + '" alt="" loading="lazy" decoding="async"></span><span class="pname">' + esc(p.n) + "</span></a>";
   }
   $("provTrack").innerHTML = C.providers.map(function(p) {
@@ -246,12 +249,13 @@
     runSearch();
     q.focus();
   });
-  function openSearch() {
+  function openSearch(keepFocus) {
     document.body.classList.add("searching");
     $("searchBtn").setAttribute("aria-expanded", "true");
-    setTimeout(function() {
-      q.focus();
-    }, 30);
+    if (!keepFocus)
+      setTimeout(function() {
+        q.focus();
+      }, 30);
   }
   function closeSearch() {
     if (!q.value) {
@@ -776,7 +780,7 @@
     localCount[G[id].p] = (localCount[G[id].p] || 0) + 1;
   });
   function stCard(p) {
-    return '<a class="st-card' + (p.logo ? "" : " st-text") + '" href="#/providers/' + pslug(p.n) + '" data-prov="' + esc(p.n) + '" aria-label="' + esc(p.n) + ", " + fmt(p.count) + ' games"><span class="ppill">' + (p.logo ? '<img src="' + p.logo + '" alt="" loading="lazy" decoding="async">' : '<b class="st-word">' + esc(p.n) + "</b>") + '</span><span class="st-name">' + esc(p.n) + '</span><span class="st-meta"><b>' + fmt(p.count) + "</b> game" + (p.count === 1 ? "" : "s") + (p.kind ? " &middot; " + esc(p.kind) : "") + "</span></a>";
+    return '<a class="st-card' + (p.logo ? "" : " st-text") + '" href="#/providers/' + pslug(p.n) + '" data-prov="' + esc(p.n) + '" aria-label="' + esc(p.n) + ", " + fmt(p.count) + ' games"><span class="ppill">' + (p.logo ? '<img src="' + tileLogo(p.logo) + '" alt="" loading="lazy" decoding="async">' : '<b class="st-word">' + esc(p.n) + "</b>") + '</span><span class="st-name">' + esc(p.n) + '</span><span class="st-meta"><b>' + fmt(p.count) + "</b> game" + (p.count === 1 ? "" : "s") + (p.kind ? " &middot; " + esc(p.kind) : "") + "</span></a>";
   }
   function renderStudios() {
     var v = norm(stQ.value), words = v ? v.split(" ") : [];

@@ -1,4 +1,4 @@
-/* Popcorn.casino preview v13: wider hero with the showgirl's face on every slide, one spacing scale, smaller mascot,
+/* Popcorn.casino preview v13: taller hero (v13c) with the showgirl's whole head on slides 1-2, one spacing scale, smaller mascot,
    gold Join now buttons, Back to lobby on every section, picture-led promotions, warmer studios page. Loaded last. */
 :root {
   --sp-1: 8px;
@@ -7,20 +7,13 @@
   --sp-4: 24px;
   --sp-5: 32px;
   --sp-6: 48px;
-  --hero-max: 1600px;
-  --hero-h: clamp(330px, 21vw, 400px);
+  --hero-h: clamp(320px, calc(21.43vw + 105.7px), 380px);
 }
 
-/* ---------- 1. Hero: wider than the rails on big screens, taller, her face in view on every slide ---------- */
+/* ---------- 1. Hero: rail width, 380 px tall from 1280 (reference slider 382 x 1256), 320 at 1000, her whole head in view on slides 1-2 ---------- */
 .bnr {
   height: var(--hero-h);
   margin-top: var(--sp-5);
-  margin-inline: calc(50% - min(50vw - 24px, var(--hero-max) / 2));
-}
-@media (max-width: 1000px) {
-  .bnr {
-    margin-inline: 0;
-  }
 }
 .s1 .s-art {
   width: 62%;
@@ -34,28 +27,12 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 42%);
   mask-image: linear-gradient(90deg, transparent, #000 42%);
 }
-.s3 .s-art {
-  width: 34%;
-  max-width: 470px;
-  transform: none;
-  filter: none;
-  background: url(art/tile-showgirl.webp) 100% 0 / 100% auto no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 34%);
-  mask-image: linear-gradient(90deg, transparent, #000 34%);
-}
-.s3 {
-  background:
-    radial-gradient(700px 360px at 78% 40%, rgba(255, 190, 70, .28), transparent 70%),
-    radial-gradient(500px 300px at 20% 50%, #4a3208, transparent 70%),
-    linear-gradient(90deg, #1c1204, #4a2e08 45%, #2a1a05);
-}
 .bnr .hero-host {
   --h: 160px;
   right: calc(62% - 120px);
 }
 .s3-host {
   height: 200px;
-  right: min(30%, 420px);
 }
 .bnr-arrow.next {
   right: 14px;
@@ -69,13 +46,7 @@
     right: calc(62% - 104px);
   }
   .s3-host {
-    right: 32%;
     height: 180px;
-  }
-}
-@media (max-width: 1000px) and (min-width: 761px) {
-  .s3-host {
-    display: none;
   }
 }
 @media (max-width: 760px) {
@@ -85,21 +56,16 @@
   }
   .s1 .s-art {
     width: 300px;
-    background-position: 74% 34%;
+    background-position: 74% 31%;
     background-size: auto 150%;
+  }
+  .bnr .s-copy .eyebrow {
+    justify-content: flex-start;
   }
   .s2 .s-art {
     width: 230px;
     background-size: auto 118%;
     background-position: 84% 0;
-  }
-  .s3 .s-art {
-    width: 190px;
-    max-width: none;
-    background-size: auto 100%;
-    background-position: 100% 0;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%);
-    mask-image: linear-gradient(90deg, transparent, #000 30%);
   }
   .bnr .hero-host {
     --h: 98px;
@@ -107,8 +73,6 @@
   }
   .s3-host {
     height: 112px;
-    right: 96px;
-    bottom: 34px;
   }
   .s3 .s-title .neon.gold {
     font-size: 36px;
@@ -133,9 +97,6 @@
 @media (max-width: 380px) {
   .s3 .s-title .neon.gold {
     font-size: 31px;
-  }
-  .s3 .s-art {
-    background-position: 49% 0;
   }
 }
 
@@ -764,9 +725,6 @@ a.pill-gold[href="#/join"]:focus-visible {
   }
   .bnr .s3 .s-title .neon.gold {
     font-size: 26px;
-  }
-  .s3 .s-art {
-    background-position: 0 0;
   }
 }
 

@@ -10,26 +10,21 @@
   --hero-h: clamp(320px, calc(21.43vw + 105.7px), 380px);
 }
 
-/* ---------- 1. Hero: rail width, 380 px tall from 1280 (reference slider 382 x 1256), 320 at 1000, her whole head in view on slides 1-2 ---------- */
+/* ---------- 1. Hero: the pre-v13 banner (v9.css), only taller (380 px from 1280, 320 at 1000), the pictures moved down so her whole head shows, smaller mascot ---------- */
 .bnr {
   height: var(--hero-h);
   margin-top: var(--sp-5);
 }
-.s1 .s-art {
-  width: 62%;
-  background: url(art/hero-stage.webp) 100% 46% / auto 152% no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%);
-  mask-image: linear-gradient(90deg, transparent, #000 30%);
-}
-.s2 .s-art {
-  width: 60%;
-  background: url(art/hero-showgirl.webp) 100% 0 / auto 142% no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 42%);
-  mask-image: linear-gradient(90deg, transparent, #000 42%);
+@media (min-width: 761px) {
+  .s1 .s-art {
+    background-position-y: 48%;
+  }
+  .s2 .s-art {
+    background-position-y: 2%;
+  }
 }
 .bnr .hero-host {
   --h: 160px;
-  right: calc(62% - 120px);
 }
 .s3-host {
   height: 200px;
@@ -43,7 +38,6 @@
 @media (max-width: 1200px) {
   .bnr .hero-host {
     --h: 140px;
-    right: calc(62% - 104px);
   }
   .s3-host {
     height: 180px;
@@ -54,22 +48,17 @@
     height: 300px;
     margin-top: var(--sp-3);
   }
+  .bnr .hero-host {
+    --h: 98px;
+  }
   .s1 .s-art {
-    width: 300px;
-    background-position: 74% 31%;
-    background-size: auto 150%;
+    background-position-y: 30%;
+  }
+  .s2 .s-art {
+    background-position-y: 0;
   }
   .bnr .s-copy .eyebrow {
     justify-content: flex-start;
-  }
-  .s2 .s-art {
-    width: 230px;
-    background-size: auto 118%;
-    background-position: 84% 0;
-  }
-  .bnr .hero-host {
-    --h: 98px;
-    right: 112px;
   }
   .s3-host {
     height: 112px;
@@ -97,6 +86,11 @@
 @media (max-width: 380px) {
   .s3 .s-title .neon.gold {
     font-size: 31px;
+  }
+}
+@media (max-width: 340px) {
+  .bnr .hero-host {
+    --h: 76px;
   }
 }
 

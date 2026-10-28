@@ -1,0 +1,744 @@
+/* Popcorn.casino preview v13: taller hero (v13c) with the showgirl's whole head on slides 1-2, one spacing scale, smaller mascot,
+   gold Join now buttons, Back to lobby on every section, picture-led promotions, warmer studios page. Loaded last. */
+:root {
+  --sp-1: 8px;
+  --sp-2: 12px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
+  --sp-6: 48px;
+  --hero-h: clamp(320px, calc(21.43vw + 105.7px), 380px);
+}
+
+/* ---------- 1. Hero: rail width, 380 px tall from 1280 (reference slider 382 x 1256), 320 at 1000, her whole head in view on slides 1-2 ---------- */
+.bnr {
+  height: var(--hero-h);
+  margin-top: var(--sp-5);
+}
+.s1 .s-art {
+  width: 62%;
+  background: url(art/hero-stage.webp) 100% 46% / auto 152% no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 30%);
+  mask-image: linear-gradient(90deg, transparent, #000 30%);
+}
+.s2 .s-art {
+  width: 60%;
+  background: url(art/hero-showgirl.webp) 100% 0 / auto 142% no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 42%);
+  mask-image: linear-gradient(90deg, transparent, #000 42%);
+}
+.bnr .hero-host {
+  --h: 160px;
+  right: calc(62% - 120px);
+}
+.s3-host {
+  height: 200px;
+}
+.bnr-arrow.next {
+  right: 14px;
+}
+.bnr-arrow.prev {
+  left: 14px;
+}
+@media (max-width: 1200px) {
+  .bnr .hero-host {
+    --h: 140px;
+    right: calc(62% - 104px);
+  }
+  .s3-host {
+    height: 180px;
+  }
+}
+@media (max-width: 760px) {
+  .bnr {
+    height: 300px;
+    margin-top: var(--sp-3);
+  }
+  .s1 .s-art {
+    width: 300px;
+    background-position: 74% 31%;
+    background-size: auto 150%;
+  }
+  .bnr .s-copy .eyebrow {
+    justify-content: flex-start;
+  }
+  .s2 .s-art {
+    width: 230px;
+    background-size: auto 118%;
+    background-position: 84% 0;
+  }
+  .bnr .hero-host {
+    --h: 98px;
+    right: 112px;
+  }
+  .s3-host {
+    height: 112px;
+  }
+  .s3 .s-title .neon.gold {
+    font-size: 36px;
+  }
+  body.v-prov .results .rail-head .more:not(.res-studios).lobby-back {
+    display: inline-flex;
+  }
+  .results .rail-head {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .results .rail-head .res-studios:not([hidden]),
+  .results .rail-head .res-studios:not([hidden]) + .lobby-back {
+    margin-left: 0;
+    order: 5;
+  }
+  .results .rail-head .res-studios:not([hidden]) {
+    flex-basis: auto;
+    margin-left: 0;
+  }
+}
+@media (max-width: 380px) {
+  .s3 .s-title .neon.gold {
+    font-size: 31px;
+  }
+}
+
+/* ---------- 2. Spacing: one scale (8 / 12 / 16 / 24 / 32 / 48), measured against the reference lobby ---------- */
+.wins {
+  margin-top: var(--sp-4);
+}
+.chips {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.rail {
+  margin-bottom: var(--sp-6);
+}
+.rail-head {
+  margin-bottom: 22px;
+}
+.offers,
+.encore,
+.jpm,
+.bill {
+  margin-top: 0;
+  margin-bottom: var(--sp-6);
+}
+.results,
+body.v-prov .results,
+.studios {
+  margin-top: var(--sp-5);
+}
+.page:not(.pg-box):not(.pg-deposit) {
+  margin-top: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+footer {
+  margin-top: var(--sp-6);
+}
+@media (max-width: 760px) {
+  .wins {
+    margin-top: var(--sp-3);
+  }
+  .chips {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .rail {
+    margin-bottom: var(--sp-5);
+  }
+  .rail-head {
+    margin-bottom: 18px;
+  }
+  .offers,
+  .encore,
+  .jpm,
+  .bill {
+    margin-bottom: var(--sp-5);
+  }
+  .results,
+  body.v-prov .results,
+  .studios {
+    margin-top: var(--sp-4);
+  }
+  .page:not(.pg-box):not(.pg-deposit) {
+    margin-top: var(--sp-4);
+    margin-bottom: var(--sp-5);
+  }
+  footer {
+    margin-top: var(--sp-5);
+  }
+}
+
+/* ---------- 3. The mascot a bit smaller everywhere (about 18%) ---------- */
+.offers-host .mbox {
+  --h: 160px;
+}
+.bill-host {
+  height: 168px;
+}
+.st-host {
+  height: 156px;
+  bottom: -10px;
+}
+@media (min-width: 761px) {
+  .st-head {
+    padding-left: 140px;
+    min-height: 150px;
+  }
+}
+.empty-pop.empty-host {
+  width: 86px;
+  height: 100px;
+}
+.empty-host img {
+  height: 100px;
+}
+.loader-host {
+  width: 124px;
+}
+@media (min-width: 1161px) {
+  .bill-head {
+    padding-left: 160px;
+  }
+}
+@media (max-width: 1160px) and (min-width: 761px) {
+  .bill-host {
+    height: 164px;
+  }
+  .bill-head {
+    padding-left: 150px;
+  }
+}
+@media (max-width: 760px) {
+  .offers-host .mbox {
+    --h: 98px;
+  }
+  .bill-host {
+    height: 96px;
+  }
+  .tabbar a.mid img {
+    width: 42px;
+    margin-top: 9px;
+  }
+}
+
+/* ---------- 8. Join now: more gold, more glow, same 44 px tap size ---------- */
+a.pill-gold[href="#/join"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 44px;
+  color: #2a1400;
+  background: linear-gradient(180deg, #fff6c8 0%, #ffd965 34%, #f5b72e 66%, #e39a1c 100%);
+  border: 1px solid #ffe7a0;
+  box-shadow:
+    0 4px 0 #9a5d0c,
+    inset 0 1px 0 rgba(255, 255, 255, .85),
+    inset 0 -2px 6px rgba(150, 80, 0, .35),
+    0 0 18px rgba(255, 200, 70, .75),
+    0 0 44px rgba(255, 170, 40, .45);
+  text-shadow: 0 1px 0 rgba(255, 240, 190, .7);
+}
+a.pill-gold[href="#/join"]::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .75), transparent);
+  transform: skewX(-18deg);
+  animation: joinShine 3.8s ease-in-out infinite;
+  pointer-events: none;
+}
+a.pill-gold[href="#/join"]:hover,
+a.pill-gold[href="#/join"]:focus-visible {
+  background: linear-gradient(180deg, #fffbe0 0%, #ffe27e 34%, #ffc23c 66%, #eda422 100%);
+  box-shadow:
+    0 4px 0 #9a5d0c,
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 -2px 6px rgba(150, 80, 0, .3),
+    0 0 26px rgba(255, 210, 90, .95),
+    0 0 64px rgba(255, 170, 40, .6);
+}
+@keyframes joinShine {
+  0%, 55% {
+    left: -60%;
+  }
+  85%, 100% {
+    left: 130%;
+  }
+}
+.tabbar a.mid span {
+  border-color: #ffd965;
+  box-shadow:
+    0 0 0 2px rgba(255, 230, 150, .45),
+    0 0 22px rgba(255, 200, 70, .85),
+    0 0 46px rgba(255, 170, 40, .45),
+    0 6px 14px rgba(0, 0, 0, .5);
+}
+.tabbar a.mid {
+  color: #ffd965;
+  text-shadow: 0 0 10px rgba(255, 200, 70, .7);
+}
+@media (prefers-reduced-motion: reduce) {
+  a.pill-gold[href="#/join"]::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* ---------- 4 + 7. Back on the game page, Back to lobby on every section (one look, top right; on phones top left) ---------- */
+.lobby-back,
+.gd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1.5px solid rgba(255, 230, 163, .55);
+  border-radius: 99px;
+  font: 600 13px/1 var(--condensed);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
+  background: rgba(255, 230, 163, .06);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.lobby-back:hover,
+.lobby-back:focus-visible,
+.gd-back:hover,
+.gd-back:focus-visible {
+  background: #ffe6a3;
+  border-color: #ffe6a3;
+  color: #1a1000;
+}
+.results .rail-head .lobby-back {
+  margin-left: auto;
+}
+.results .rail-head .res-studios:not([hidden]) {
+  margin-left: auto;
+}
+.results .rail-head .res-studios:not([hidden]) + .lobby-back {
+  margin-left: 0;
+}
+.page {
+  position: relative;
+}
+.lobby-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.gd-head {
+  align-items: center;
+}
+.gd-back {
+  order: -1;
+}
+@media (max-width: 760px) {
+  .lobby-bar {
+    position: static;
+    margin-bottom: var(--sp-2);
+  }
+  .lobby-back,
+  .gd-back {
+    font-size: 12px;
+    padding: 0 14px;
+  }
+}
+
+/* ---------- 6. Promotions: picture-led cards, kicker, title, offer line, terms, outline "See the offer" ---------- */
+.pr-head {
+  margin: 0 0 var(--sp-4);
+}
+.pr-head .st-host {
+  height: 150px;
+  bottom: -8px;
+  left: 6px;
+  animation: bob 3.6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+@media (min-width: 1001px) {
+  .pr-head .st-sign {
+    min-width: 420px;
+  }
+}
+.promo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--sp-4) 20px;
+  max-width: none;
+}
+.promo-grid .promo {
+  position: relative;
+  background: var(--obg);
+  border: 1px solid color-mix(in srgb, var(--oc) 42%, transparent);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, .35);
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.promo-grid .promo:not(.open):hover,
+.promo-grid .promo:not(.open):focus-within {
+  transform: translateY(-4px);
+  border-color: var(--oc);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, .45), 0 0 26px color-mix(in srgb, var(--oc) 35%, transparent);
+}
+.promo-grid .promo-art {
+  display: block;
+  align-self: stretch;
+  width: auto;
+  height: 176px;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 0;
+  background: #120914;
+}
+.promo-grid .promo-art img.pc-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  filter: none;
+  transition: transform 1.2s ease;
+}
+.promo-grid .promo:hover .promo-art img.pc-art {
+  transform: scale(1.06);
+}
+.promo-grid .promo-art::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 60px;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--oc) 10%, #0d0612 70%));
+  pointer-events: none;
+}
+.promo-grid .pa-bulbs {
+  top: auto;
+  bottom: 6px;
+  z-index: 2;
+}
+.pa-shine {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  width: 34%;
+  background: linear-gradient(100deg, transparent, rgba(255, 245, 210, .35), transparent);
+  transform: skewX(-16deg);
+  animation: paShine 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.promo:nth-child(2) .pa-shine {
+  animation-delay: 1.3s;
+}
+.promo:nth-child(3) .pa-shine {
+  animation-delay: 2.6s;
+}
+.promo:nth-child(4) .pa-shine {
+  animation-delay: 3.9s;
+}
+@keyframes paShine {
+  0%, 60% {
+    left: -50%;
+  }
+  90%, 100% {
+    left: 130%;
+  }
+}
+.promo-grid .promo-body {
+  gap: 0;
+  padding: 16px 18px 18px;
+}
+.promo .ohead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.promo .ohead .okind {
+  font-size: 12px;
+  letter-spacing: .16em;
+}
+.promo .b-sample,
+.offers-foot .b-sample {
+  margin-left: 0;
+}
+.promo-grid .promo h2 {
+  font-size: 27px;
+  letter-spacing: .02em;
+}
+.promo .oval {
+  margin: 6px 0 14px;
+  font: 700 17px/1.3 var(--body);
+  color: #fff4dc;
+}
+.promo-grid .promo .oterms {
+  flex: 1;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px dashed color-mix(in srgb, var(--oc) 45%, transparent);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(238, 240, 250, .76);
+}
+.promo-grid .promo-ctas {
+  display: flex;
+  margin-top: 16px;
+}
+.promo-grid .promo-ctas .pill.promo-see {
+  width: auto;
+  height: 44px;
+  padding: 0 22px;
+  border: 2px solid #ffe6a3;
+  color: #fff4dc;
+  background: rgba(255, 230, 163, .1);
+  font-size: 15px;
+  letter-spacing: .1em;
+}
+.promo-grid .promo-ctas .pill.promo-see:hover,
+.promo-grid .promo-ctas .pill.promo-see:focus-visible {
+  background: #ffe6a3;
+  color: #1a1000;
+}
+.promo-grid .promo.open {
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+}
+.promo-grid .promo.open .promo-art {
+  height: 100%;
+  min-height: 220px;
+  max-height: 340px;
+}
+.promo-go {
+  margin-bottom: 14px;
+}
+.offers-foot {
+  margin-top: var(--sp-4);
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .promo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .st-head,
+  .pr-head {
+    padding-left: 0;
+    min-height: 0;
+  }
+  .pr-head .st-sign {
+    min-width: 0;
+  }
+  .promo-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+  .promo-grid .promo,
+  .promo-grid .promo.open {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    grid-template-rows: auto;
+    column-gap: 14px;
+    padding: 16px;
+    align-items: start;
+  }
+  .promo-grid .promo-body {
+    display: contents;
+  }
+  .promo-grid .promo-art,
+  .promo-grid .promo.open .promo-art {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    height: 138px;
+    min-height: 0;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--oc) 45%, transparent);
+  }
+  .promo-grid .pa-bulbs {
+    display: none;
+  }
+  .promo .ohead,
+  .promo-grid .promo h2,
+  .promo .oval {
+    grid-column: 2;
+  }
+  .promo .ohead {
+    margin-bottom: 4px;
+  }
+  .promo .ohead .okind {
+    font-size: 11px;
+    letter-spacing: .12em;
+  }
+  .promo-grid .promo h2 {
+    font-size: 24px;
+  }
+  .promo .oval {
+    margin: 6px 0 0;
+    font-size: 15px;
+  }
+  .promo-grid .promo .oterms,
+  .promo-grid .promo-ctas,
+  .promo-more {
+    grid-column: 1 / -1;
+  }
+  .promo-grid .promo .oterms {
+    margin-top: 14px;
+  }
+  .promo-grid .promo-ctas {
+    margin-top: 14px;
+  }
+  .promo-grid .promo-ctas .pill.promo-see {
+    width: 100%;
+  }
+  .promo-more {
+    margin: 14px -16px -16px;
+  }
+}
+
+/* ---------- 5. Studios: indigo tiles with light logos (the reference's colours), Popcorn gold on hover ---------- */
+.studios {
+  position: relative;
+}
+.st-card {
+  gap: 6px;
+  padding: 10px 10px 14px;
+  background: linear-gradient(160deg, #2f2c80 0%, #262a74 45%, #1c2263 100%);
+  border: 1px solid rgba(170, 160, 255, .2);
+  box-shadow: 0 10px 22px rgba(4, 6, 30, .45), inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.st-card .ppill,
+.st-text .ppill {
+  height: 78px;
+  padding: 10px 14px;
+  background: none;
+  box-shadow: none;
+}
+.st-card .ppill img {
+  max-height: 46px;
+  max-width: 88%;
+}
+.st-word {
+  color: #fff;
+  font-size: 23px;
+  text-shadow: 0 0 14px rgba(160, 150, 255, .35);
+}
+.st-name {
+  text-align: center;
+  font-size: 13.5px;
+  color: #e9e6ff;
+}
+.st-meta {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa6dc;
+}
+.st-meta b {
+  color: #ffd965;
+}
+.st-card:hover,
+.st-card:focus-visible {
+  border-color: #ffd965;
+  background: linear-gradient(160deg, #3a3594 0%, #2d2f82 45%, #212870 100%);
+  box-shadow: 0 14px 28px rgba(4, 6, 30, .5), 0 0 22px rgba(255, 200, 70, .3);
+}
+.st-card:hover .st-name {
+  color: #ffe6a3;
+}
+.pcard {
+  background: linear-gradient(160deg, #2f2c80 0%, #262a74 45%, #1c2263 100%);
+  border-color: rgba(170, 160, 255, .2);
+}
+.pcard .ppill {
+  background: none;
+  box-shadow: none;
+}
+@media (max-width: 760px) {
+  .st-card .ppill,
+  .st-text .ppill {
+    height: 62px;
+  }
+  .st-word {
+    font-size: 19px;
+  }
+}
+
+/* ---------- reduced motion: no moving parts ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .pa-shine {
+    display: none;
+    animation: none;
+  }
+  .pr-head .st-host {
+    animation: none;
+  }
+  .promo-grid .promo-art img.pc-art,
+  .promo-grid .promo {
+    transition: none;
+  }
+  .promo-grid .promo:hover .promo-art img.pc-art {
+    transform: none;
+  }
+}
+.promo-go a.pill {
+  text-decoration: none;
+}
+@media (max-width: 760px) {
+  .st-head .st-back {
+    align-self: flex-start;
+  }
+}
+.results .rail-head .res-studios[hidden] + .lobby-back {
+  margin-left: auto;
+}
+
+/* SAMPLE next to every made-up offer figure on the home page (banner offers, offer cards) */
+.bnr .eyebrow .b-sample {
+  margin-left: 4px;
+  letter-spacing: .18em;
+}
+.offers .rail-head .b-sample {
+  margin-left: 0;
+}
+@media (max-width: 760px) {
+  .offers .rail-head .tag {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .bnr .s-copy .eyebrow {
+    letter-spacing: .1em;
+    gap: 6px;
+  }
+  .bnr .eyebrow .b-sample {
+    margin-left: 0;
+    padding: 2px 4px;
+    letter-spacing: .12em;
+  }
+}
+@media (max-width: 340px) {
+  .bnr .s-title .neon {
+    font-size: 42px;
+  }
+  .bnr .s3 .s-title .neon.gold {
+    font-size: 26px;
+  }
+}
+
+/* Promotions header on phones: keep a compact mascot beside the sign (v13 review F2) */
+@media (max-width: 760px) {
+  .pr-head {
+    position: relative;
+    padding-left: 80px;
+  }
+  .pr-head .st-host {
+    display: block;
+    height: 100px;
+    top: 0;
+    bottom: auto;
+    left: -6px;
+  }
+}

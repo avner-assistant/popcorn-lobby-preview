@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Popcorn Casino - It's showtime | Preview</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Popcorn Casino preview: a Saturday-night-in-Vegas casino lobby. Design draft, not a live site.">
+<link rel="icon" type="image/webp" href="assets/icons/bucket.webp">
+<link rel="preload" as="image" href="assets/art/hero-stage.webp">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/v9.css">
+<link rel="stylesheet" href="assets/v9b-wins.css">
+<link rel="stylesheet" href="assets/v10-boards.css">
+<link rel="stylesheet" href="assets/v10b-providers.css">
+<link rel="stylesheet" href="assets/v11-site.css">
+</head>
+<body>
+
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div>
+    <img class="loader-host" src="assets/showman/welcome.webp" alt="">
+    <span class="pop-row"><img src="assets/icons/kernel.webp" alt=""><img src="assets/icons/kernel.webp" alt=""><img src="assets/icons/kernel.webp" alt=""></span>
+    Curtain up&hellip;
+  </div>
+</div>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <button class="burger" id="burger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false"><span></span></button>
+    <a class="logo" href="#/" aria-label="Popcorn Casino home">
+      <img src="assets/icons/bucket.webp" alt="">
+      <span class="wordmark"><b>POPCORN</b><i>CASINO</i><span class="bulbs bulbs-mini"></span></span>
+    </a>
+    
+    <nav class="nav" aria-label="Main">
+      <a class="on" href="#/" data-nav="lobby">Casino</a><a href="#/games" data-nav="games">Games</a><a href="#/promotions" data-nav="promotions">Promotions</a><a href="#/providers" data-nav="providers">Providers</a>
+    </nav>
+    <div class="spacer"></div>
+    <form class="search" id="searchForm" role="search" onsubmit="return false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label class="sr" for="q">Search games or providers</label>
+      <input id="q" type="search" placeholder="Search games or providers" autocomplete="off" enterkeyhint="search">
+      <button type="button" class="search-x" id="searchClear" aria-label="Clear search">&times;</button>
+    </form>
+    <button class="search-btn" id="searchBtn" aria-label="Search games" aria-controls="searchForm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+    <a class="pill pill-ghost login" href="#/login">Log in</a>
+    <a class="pill pill-gold" href="#/join">Join now</a>
+  </div>
+  <div class="velvet-strip"><span class="bulbs"></span></div>
+</header>
+
+<main class="wrap">
+
+  
+  <section class="bnr" id="bnr" aria-roledescription="carousel" aria-label="Featured offers">
+    <div class="bnr-track" id="bnrTrack" aria-live="off">
+      <article class="slide s1 on" aria-roledescription="slide" aria-label="1 of 3: Welcome bonus">
+        <div class="s-art" aria-hidden="true"></div>
+        <span class="footlights bulbs" aria-hidden="true"></span>
+        
+        <div class="hero-host mbox m-host-left" id="heroHost"><img src="assets/showman/host-left.webp" alt=""></div>
+        <div class="s-copy">
+          <div class="eyebrow"><span class="dot"></span>Welcome bonus &middot; new players</div>
+          <h2 class="s-title"><span class="pre">Tonight it&rsquo;s</span><span class="neon" data-text="SHOWTIME">Showtime</span></h2>
+          <p class="s-sub">100% up to &euro;200 + 50 free spins</p>
+          <div class="ctas"><a class="pill pill-gold" href="#/join">Join now</a><a class="pill pill-ghost" href="#/games">Browse games</a></div>
+          <p class="s-terms"><span class="t-std">18+. New players only.<span class="t-long"> Min. deposit &euro;10, 10x wagering on the bonus, 30 days.</span> </span><span class="t-short">18+ &middot; &euro;10 min &middot; 10x bonus &middot; 30 days &middot; </span><a href="#/promotions/welcome"><span class="t-std">Full terms</span><span class="t-short">Terms</span></a></p>
+        </div>
+      </article>
+      <article class="slide s2" aria-roledescription="slide" aria-label="2 of 3: Premiere spins">
+        <div class="s-art" aria-hidden="true"></div>
+        <span class="footlights bulbs" aria-hidden="true"></span>
+        <div class="s-copy">
+          <div class="eyebrow"><span class="dot"></span>Weekly &middot; opt in</div>
+          <h2 class="s-title"><span class="pre">This week&rsquo;s</span><span class="neon pink" data-text="PREMIERE">Premiere</span></h2>
+          <p class="s-sub">25 free spins on the week&rsquo;s new game</p>
+          <div class="ctas"><a class="pill pill-gold" href="#/promotions/premiere">Opt in</a><a class="pill pill-ghost" href="#/games/new">See new games</a></div>
+          <p class="s-terms"><span class="t-std">18+. Opt in<span class="t-long">, then deposit &euro;20+. Wagering 10x, 7 days</span>. </span><span class="t-short">18+ &middot; Opt in &middot; &euro;20 min &middot; 10x &middot; 7 days &middot; </span><a href="#/promotions/premiere"><span class="t-std">Full terms</span><span class="t-short">Terms</span></a></p>
+        </div>
+      </article>
+      <article class="slide s3" aria-roledescription="slide" aria-label="3 of 3: Popcorn Club">
+        <div class="s-art" aria-hidden="true"></div>
+        <span class="footlights bulbs" aria-hidden="true"></span>
+        <img class="s3-host" src="assets/showman/welcome.webp" alt="" loading="lazy">
+        <div class="s-copy">
+          <div class="eyebrow"><span class="dot"></span>Loyalty &middot; every player</div>
+          <h2 class="s-title"><span class="pre">Join the</span><span class="neon gold" data-text="POPCORN CLUB">Popcorn Club</span></h2>
+          <p class="s-sub">Points on every game, rewards you choose</p>
+          <div class="ctas"><a class="pill pill-gold" href="#/promotions/club">Learn more</a></div>
+          <p class="s-terms">Details and terms coming soon.<span class="t-long"> Nothing to claim yet.</span></p>
+        </div>
+      </article>
+    </div>
+    <button class="bnr-arrow prev" id="bnrPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m15 6-6 6 6 6"/></svg></button>
+    <button class="bnr-arrow next" id="bnrNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 6 6 6-6 6"/></svg></button>
+    <div class="bnr-dots" id="bnrDots" role="tablist" aria-label="Choose slide">
+      <button role="tab" class="on" aria-selected="true" aria-label="Slide 1"></button><button role="tab" aria-selected="false" aria-label="Slide 2"></button><button role="tab" aria-selected="false" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  
+  <section class="wins" id="wins" aria-labelledby="winsTitle">
+    <div class="wins-label">
+      <img class="wins-kernel" src="assets/icons/kernel.webp" alt="">
+      <span class="wins-text"><b id="winsTitle"><span class="live-dot" aria-hidden="true"></span>Live wins</b><small class="wins-sample" title="Sample wins for this preview. The live site shows the casino's real wins feed.">Sample</small></span>
+    </div>
+    <div class="wins-view"><div class="wins-track" id="winsTrack"></div></div>
+  </section>
+
+  
+  <nav class="chips" id="chips" aria-label="Game categories"></nav>
+
+  
+  <section class="results" id="results" hidden aria-live="polite">
+    <div class="rail-head"><span class="rail-icon" id="resIcon"></span><h2 id="resTitle" tabindex="-1">Results</h2><span class="tag" id="resCount"></span>
+      <a class="more res-studios" id="resStudios" href="#/providers" hidden>&larr; All studios</a><a class="more" href="#/">&larr; Back to lobby</a></div>
+    <div class="grid" id="resGrid"></div>
+    <p class="res-more" id="resMore" hidden></p>
+    <div class="empty noresults" id="noResults" hidden>
+      <span class="empty-pop empty-host"><img src="assets/showman/point-right.webp" alt="" loading="lazy"></span>
+      <div><b id="noResTitle">No games match</b><span id="noResText">Try a game name or a studio, like &ldquo;Pragmatic&rdquo; or &ldquo;Roulette&rdquo;.</span></div>
+      <div class="picks-wrap"><small>Tonight&rsquo;s picks instead</small><div class="picks" id="noResPicks"></div></div>
+    </div>
+  </section>
+
+  
+  <section class="studios" id="studios" hidden aria-labelledby="stTitle">
+    <div class="st-head">
+      <img class="st-host" src="assets/showman/host-right.webp" alt="" loading="lazy">
+      <div class="st-sign">
+        <span class="bill-bulbs" aria-hidden="true"></span>
+        <h1 id="stTitle" tabindex="-1"><small>Popcorn presents</small>The studios</h1>
+        <span class="st-sub"><b id="stTotal"></b> studios &middot; <b id="stGames"></b> games in the lobby</span>
+      </div>
+      <a class="more st-back" href="#/">&larr; Back to lobby</a>
+    </div>
+    <div class="st-tools">
+      <form class="st-search" role="search" onsubmit="return false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label class="sr" for="stQ">Search studios by name</label>
+        <input id="stQ" type="search" placeholder="Search studios" autocomplete="off" enterkeyhint="search">
+        <button type="button" class="search-x" id="stClear" aria-label="Clear studio search">&times;</button>
+      </form>
+      <div class="st-sort" role="group" aria-label="Sort studios">
+        <button type="button" data-sort="games" aria-pressed="true">Most games</button><button type="button" data-sort="az" aria-pressed="false">A&ndash;Z</button>
+      </div>
+      <span class="st-found" id="stFound" aria-live="polite"></span>
+    </div>
+    <div class="st-grid" id="stGrid"></div>
+    <div class="empty st-empty" id="stEmpty" hidden>
+      <span class="empty-pop empty-host"><img src="assets/showman/point-right.webp" alt="" loading="lazy"></span>
+      <div><b id="stEmptyTitle">No studio by that name</b><span>Try part of the name, like &ldquo;Play&rdquo; or &ldquo;Gaming&rdquo;.</span></div>
+      <button type="button" class="pill pill-ghost" id="stReset">Show all studios</button>
+    </div>
+    <p class="st-foot">Studios and game counts are a sample snapshot. Studios without a logo file show their name. This preview carries
+      thumbnails for the 101 games on the home page; the live site opens every studio&rsquo;s full list.</p>
+  </section>
+
+  
+  <section class="page" id="page" hidden></section>
+
+  <div id="lobby">
+    <div id="rails-a"></div>
+
+    
+    <section class="offers" id="promos" aria-labelledby="offersTitle">
+      <div class="rail-head">
+        <span class="rail-icon"><img src="assets/icons/ticket.webp" alt=""></span><h2 id="offersTitle">Tonight&rsquo;s offers</h2>
+        <span class="tag">TERMS ON EVERY CARD</span><a class="more" href="#/promotions">All<span class="long"> promotions</span> &rarr;</a>
+      </div>
+      <div class="offers-body">
+        <div class="offers-host">
+          <div class="host-say"><b>Tonight&rsquo;s line-up!</b>Pick one, or play without. The rules are printed on every ticket.</div>
+          <div class="mbox m-point-right" id="offersHost"><img src="assets/showman/point-right.webp" alt="" loading="lazy"></div>
+        </div>
+        <div class="ocards">
+          <article class="ocard lead" style="--oc:#f5c451;--obg:linear-gradient(160deg,#7a0d1c,#2a0610 70%)">
+            <div class="ohead"><img class="oart" src="assets/icons/ticket.webp" alt="" loading="lazy"><span class="okind">New players</span></div>
+            <h3><a href="#/promotions/welcome">Welcome package</a></h3>
+            <p class="oval">100% up to &euro;200 + 50 free spins</p>
+            <p class="oterms">18+. First deposit only. Min. deposit &euro;10, 10x wagering on the bonus, 30 days. Deposit &euro;200 for the full bonus. <a href="#/promotions/welcome">Full terms</a></p>
+            <a class="pill pill-gold" href="#/join">Join now</a>
+          </article>
+          <article class="ocard" style="--oc:#ff8fb5;--obg:linear-gradient(160deg,#5c0b45,#1d0822 70%)">
+            <div class="ohead"><img class="oart" src="assets/icons/reel.webp" alt="" loading="lazy"><span class="okind">Weekly &middot; opt in</span></div>
+            <h3><a href="#/promotions/premiere">Premiere spins</a></h3>
+            <p class="oval">25 free spins on the week&rsquo;s new game</p>
+            <p class="oterms">Opt in, then deposit &euro;20 or more. Spins worth &euro;0.20 each, 10x wagering on spin winnings, 7 days. <a href="#/promotions/premiere">Full terms</a></p>
+            <a class="pill pill-ghost" href="#/promotions/premiere">Opt in</a>
+          </article>
+          <article class="ocard" style="--oc:#9cc2ff;--obg:linear-gradient(160deg,#16306a,#0b1230 70%)">
+            <div class="ohead"><img class="oart" src="assets/icons/kernel.webp" alt="" loading="lazy"><span class="okind">Mondays &middot; everyone</span></div>
+            <h3><a href="#/promotions/encore">Encore cashback</a></h3>
+            <p class="oval">10% back on last week&rsquo;s net losses</p>
+            <p class="oterms">Same rate for every player, no status needed. Up to &euro;100 a week, 1x wagering, claim within 3 days. <a href="#/promotions/encore">Full terms</a></p>
+            <a class="pill pill-ghost" href="#/promotions/encore">How it works</a>
+          </article>
+          <article class="ocard" id="club" style="--oc:#ffd36b;--obg:linear-gradient(160deg,#5a3d0c,#1a1208 70%)">
+            <div class="ohead"><img class="oart" src="assets/icons/star.webp" alt="" loading="lazy"><span class="okind">Loyalty</span></div>
+            <h3><a href="#/promotions/club">Popcorn Club</a></h3>
+            <p class="oval">Points on every game, rewards you choose</p>
+            <p class="oterms">Details and terms coming soon.<span class="t-long"> Nothing to claim yet.</span> <a href="#/promotions/club">Full terms</a></p>
+            <a class="pill pill-ghost" href="#/promotions/club">Learn more</a>
+          </article>
+        </div>
+      </div>
+      <p class="offers-foot">Every bonus is a choice: you can always play without one. <a href="#/responsible/limits">Set your limits</a> &middot; <a href="#/responsible">Safer gambling</a></p>
+    </section>
+
+    <div id="rails-b"></div>
+
+    
+    <section class="encore" aria-label="Why Popcorn">
+      <div class="frame"><span class="bulbs t"></span><span class="bulbs b"></span></div>
+      <h2>Big night. <em>Clear rules.</em></h2>
+      <p class="lead">Every offer prints its key terms in one plain line, right under the headline. No pre-ticked boxes, no small-print surprises.</p>
+      <div class="perks">
+        <div class="perk"><img src="assets/icons/ticket.webp" alt=""><b>Terms on the ticket</b><span>Deposit, wagering and time limit next to every offer.</span></div>
+        <div class="perk"><img src="assets/icons/spotlight.webp" alt=""><b>You set the limits</b><span>Deposit limits and breaks, one tap from the lobby.</span></div>
+        <div class="perk"><img src="assets/icons/kernel.webp" alt=""><b>Light and quick</b><span>A lobby built to load fast on a phone.</span></div>
+        <div class="perk"><img src="assets/icons/star.webp" alt=""><b>Bonus is a choice</b><span>"No bonus for me" is always one tap away.</span></div>
+      </div>
+    </section>
+
+    <div id="rails-c"></div>
+
+    
+    <section class="jpm" id="jackpots" aria-labelledby="jpTitle">
+      <div class="jpm-frame" aria-hidden="true"><span class="bulbs t"></span><span class="bulbs b"></span></div>
+      <div class="jpm-head">
+        <div class="jpm-titles"><span class="jpm-kicker">Jackpot marquee<small class="b-sample" title="Sample jackpot values for this preview. The live site shows the casino's real jackpot feeds.">Sample</small></span>
+          <h2 id="jpTitle">Tonight&rsquo;s <em>jackpots</em></h2></div>
+        <p class="jpm-lead">Three pots that grow with every spin on the games below them. Amounts are sample figures in this preview.</p>
+      </div>
+      <div class="jpm-body">
+        <div class="pots" id="pots"></div>
+        <aside class="jpwins" aria-labelledby="jpwTitle">
+          <h3 id="jpwTitle"><img src="assets/icons/star.webp" alt="">Biggest jackpot wins</h3>
+          <ol class="jpw-list" id="jpwList"></ol>
+        </aside>
+      </div>
+    </section>
+
+    <div id="rails-d"></div>
+
+    
+    <section class="bill" id="bill" aria-labelledby="billTitle">
+      <div class="bill-head">
+        <img class="bill-host" src="assets/showman/host-right.webp" alt="" loading="lazy">
+        <div class="bill-sign">
+          <span class="bill-bulbs" aria-hidden="true"></span>
+          <h2 id="billTitle"><small>Popcorn presents</small>Top of the Bill</h2>
+          <span class="bill-sub">Tonight&rsquo;s biggest wins on the floor<small class="b-sample" title="Sample wins for this preview. The live site ranks the casino's real wins feed.">Sample</small></span>
+        </div>
+        <div class="bill-tabs" role="tablist" aria-label="Leaderboard period">
+          <button role="tab" id="billTab-today" aria-controls="billPanel" aria-selected="true" data-board="today">Today</button>
+          <button role="tab" id="billTab-week" aria-controls="billPanel" aria-selected="false" tabindex="-1" data-board="week">This week</button>
+          <button role="tab" id="billTab-mult" aria-controls="billPanel" aria-selected="false" tabindex="-1" data-board="mult">Big multipliers</button>
+        </div>
+      </div>
+      <div class="bill-panel" id="billPanel" role="tabpanel" aria-labelledby="billTab-today">
+        <div class="podium" id="podium"></div>
+        <ol class="bill-list" id="billList" start="4"></ol>
+      </div>
+      <p class="bill-foot">Sample board for this preview: the live site ranks real wins from the casino&rsquo;s own feed. Names are masked.</p>
+    </section>
+
+    
+    <section class="rail provs" id="providers" aria-labelledby="provTitle" aria-roledescription="carousel">
+      <div class="rail-head"><span class="rail-icon" data-icon="studio"></span><h2 id="provTitle">Play by provider</h2>
+        <a class="more" href="#/providers" id="provAll">View all<span class="long" id="provAllN"></span> &rarr;</a>
+        <div class="arrows"><button class="arrow prev" aria-label="Previous studios" aria-controls="provTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m15 6-6 6 6 6"/></svg></button><button class="arrow next" aria-label="Next studios" aria-controls="provTrack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m9 6 6 6-6 6"/></svg></button></div></div>
+      <div class="track ptrack" id="provTrack" aria-live="off"></div>
+    </section>
+
+    
+    <section class="rail" id="favs" aria-label="Your favourites">
+      <div class="rail-head"><span class="rail-icon"><img src="assets/icons/star.webp" alt=""></span><h2>Your favourites</h2></div>
+      <div class="empty" id="favEmpty">
+        <span class="empty-pop empty-host"><img src="assets/showman/point-right.webp" alt="" loading="lazy"></span>
+        <div><b>Your front row is empty</b><span>Tap the heart on any game and it will save you a seat here.</span></div>
+        <div class="picks-wrap"><small>Tonight&rsquo;s picks to start with</small><div class="picks" id="favPicks"></div></div>
+        <a class="pill pill-ghost" href="#/games/top">Find a game</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="velvet-strip"><span class="bulbs"></span></div>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand">
+        <a class="logo" href="#/"><img src="assets/icons/bucket.webp" alt=""><span class="wordmark"><b>POPCORN</b><i>CASINO</i><span class="bulbs bulbs-mini"></span></span></a>
+        <p>Saturday night in Vegas, any night. Design preview: games, studios, thumbnails and offer figures are samples.</p>
+      </div>
+      <div><h4>Games</h4><ul><li><a href="#/games/slots">Slots</a></li><li><a href="#/games/live">Live Casino</a></li><li><a href="#/games/jackpot">Jackpot</a></li><li><a href="#/games/roulette">Roulette</a></li><li><a href="#/providers">Providers</a></li></ul></div>
+      <div><h4>Help</h4><ul><li><a href="#/help">Help &amp; FAQ</a></li><li><a href="#/contact">Contact us</a></li><li><a href="#/deposit">Wallet &amp; payments</a></li><li><a href="#/about">About Popcorn</a></li><li><a href="#/terms">Terms &amp; conditions</a></li></ul></div>
+      <div><h4>Play safe</h4><ul><li><a href="#/responsible">Responsible play</a></li><li><a href="#/responsible/limits">Deposit limits</a></li><li><a href="#/responsible/break">Take a break</a></li><li><a href="#/responsible/exclusion">Self-exclusion</a></li><li><a href="#/promotions">Promotions</a></li></ul></div>
+      <div class="bye"><q>See you at the next show.</q><a class="pill pill-gold" href="#/join">Join now</a></div>
+    </div>
+    <div class="payrow" aria-label="Payment methods (sample)"><span>Visa</span><span>Mastercard</span><span>Apple Pay</span><span>Google Pay</span><span>Bank transfer</span><span>E-wallet</span></div>
+    <div class="legal"><span class="age">18+</span><span>Play responsibly. Gambling can be addictive. <a href="#/responsible">Safer gambling</a> &middot; <a href="#/privacy">Privacy</a> &middot; <a href="#/privacy/cookies">Cookies</a></span>
+      </div>
+  </div>
+</footer>
+
+
+<nav class="tabbar" aria-label="Phone navigation">
+  <button type="button" id="tabMenu" aria-controls="drawer"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
+  <a href="#/games" data-tab="games"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Games</a>
+  <a class="mid" href="#/join" data-tab="join"><span><img src="assets/showman/head.webp" alt=""></span>Join</a>
+  <a href="#/promotions" data-tab="promotions"><svg viewBox="0 0 24 24"><path d="M3 8h18v4a2 2 0 0 0 0 4v4H3v-4a2 2 0 0 0 0-4z"/><path d="M14 8v12" stroke-dasharray="2 2"/></svg>Promos</a>
+  <button type="button" id="tabSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search</button>
+</nav>
+
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="d-head">
+    <a class="logo" href="#/"><img src="assets/icons/bucket.webp" alt=""><span class="wordmark"><b>POPCORN</b><i>CASINO</i></span></a>
+    <button class="d-close" id="drawerClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="d-body">
+    <div class="d-ctas"><a class="pill pill-gold" href="#/join">Join now</a><a class="pill pill-ghost" href="#/login">Log in</a></div>
+    <nav class="d-sec" aria-label="Menu">
+      <a class="d-link" href="#/"><i data-icon="home"></i>Casino lobby<span>&rsaquo;</span></a>
+      <details class="d-games"><summary class="d-link"><i data-icon="grid"></i>Games<span>&rsaquo;</span></summary><div class="d-cats" id="drawerCats"></div></details>
+      <a class="d-link" href="#/promotions"><i data-icon="gift"></i>Promotions<span>&rsaquo;</span></a>
+      <a class="d-link" href="#/promotions/club"><i data-icon="crown"></i>Popcorn Club<span>&rsaquo;</span></a>
+      <a class="d-link" href="#/providers"><i data-icon="studio"></i>Providers<span>&rsaquo;</span></a>
+      <a class="d-link" href="#/help"><i data-icon="chat"></i>Help &amp; support<span>&rsaquo;</span></a>
+    </nav>
+    <div class="d-sec"><h3>Language</h3>
+      <label class="d-lang"><i data-icon="globe"></i><span>Language</span><select aria-label="Language"><option>English</option><option>Deutsch</option><option>Fran&ccedil;ais</option></select></label>
+    </div>
+    <div class="d-sec"><h3>Help</h3>
+      <a class="d-link sm" href="#/help/app"><i data-icon="phone"></i>Get the app<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/deposit"><i data-icon="wallet"></i>Wallet &amp; cashier<span>&rsaquo;</span></a>
+    </div>
+    <div class="d-sec"><h3>Legal &amp; play safe</h3>
+      <a class="d-link sm" href="#/terms">Terms &amp; conditions<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/privacy">Privacy<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/privacy/cookies">Cookies<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/responsible">Responsible play<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/about">About Popcorn<span>&rsaquo;</span></a>
+      <a class="d-link sm" href="#/contact">Contact us<span>&rsaquo;</span></a>
+    </div>
+    <p class="d-foot">18+ &middot; Play responsibly &middot; Design preview</p>
+  </div>
+</aside>
+
+<script src="assets/catalog.js"></script>
+<script src="assets/providers-all.js"></script>
+<script src="assets/games-meta.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/v11-site.js"></script>
+</body>
+</html>
